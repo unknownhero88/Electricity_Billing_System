@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.net.URI;
 import javax.swing.*;
 
 public class pay_bill extends JFrame{
@@ -8,7 +9,9 @@ public class pay_bill extends JFrame{
         j.setEditable(false);
 
         try {
-            j.setPage("https://paytm.com/electricity-bill-payment");
+            Desktop.getDesktop().browse(
+                    new URI("https://paytm.com/electricity-bill-payment")
+            );
         }catch (Exception e) {
             j.setContentType("text/html");
             j.setText("<html>"+
